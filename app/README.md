@@ -9,6 +9,7 @@ Find the running app at 127.0.0.1:8080/index.
 #### Building image, running the container
 
 ``docker build . -t koan:v1 # Build the image``
+
 ``docker run -p 80:8080 -itd [image ID from docker image ls] # Run the container.`` 
 
 #### Windows idiosyncrasy
