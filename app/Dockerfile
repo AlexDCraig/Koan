@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine AS build
+FROM golang:1.13-alpine
 
 RUN apk add --no-cache git
 RUN go get github.com/golang/dep/cmd/dep
@@ -9,7 +9,5 @@ RUN dep ensure -vendor-only
 
 COPY . /go/src/koan/
 RUN go build -o /bin/koan
-
-FROM scratch
-COPY --from=build /bin/koan /bin/koan
 ENTRYPOINT ["/bin/koan"]
+
