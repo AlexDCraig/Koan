@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: koan-deployment
+  labels:
+    app: koan
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: koan
+  template:
+    metadata:
+      labels:
+        app: koan
+    spec:
+      containers:
+      - name: koan
+        image: alexdchoffer/koan:v1
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: koan-service
+spec:
+  selector:
+    app: koan
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: http
